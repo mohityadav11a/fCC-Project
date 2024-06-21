@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP in JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>OOP in JavaScript</header>
+        <a class="nav-link" href="#Classes">Classes</a>
+        <a class="nav-link" href="#Objects">Objects</a>
+        <a class="nav-link" href="#Inheritance">Inheritance</a>
+        <a class="nav-link" href="#Polymorphism">Polymorphism</a>
+        <a class="nav-link" href="#Encapsulation">Encapsulation</a>
+    </nav>
+
+    <main id="main-doc">
+        <section id="Classes" class="main-section">
+            <header>Classes</header>
+            <p>JavaScript introduced classes with ES6, which are syntactic sugar over the existing prototype-based inheritance.</p>
+            <p>Classes in JavaScript are special functions, and just like you can define function expressions and function declarations, the class syntax has two components: class expressions and class declarations.</p>
+            <code>
+                // Class Declaration
+                class Rectangle {
+                  constructor(height, width) {
+                    this.height = height;
+                    this.width = width;
+                  }
+                }
+            </code>
+            <ul>
+                <li>Class Declarations</li>
+                <li>Class Expressions</li>
+                <li>Constructor</li>
+            </ul>
+        </section>
+
+        <section id="Objects" class="main-section">
+            <header>Objects</header>
+            <p>Objects in JavaScript can be created using object literals or constructors. Objects are collections of properties and methods.</p>
+            <p>They allow you to group related data and functionalities together.</p>
+            <code>
+                // Object literal
+                const car = {
+                  make: 'Toyota',
+                  model: 'Corolla',
+                  year: 2020
+                };
+            </code>
+            <ul>
+                <li>Object Literals</li>
+                <li>Object Constructors</li>
+                <li>Properties and Methods</li>
+            </ul>
+        </section>
+
+        <section id="Inheritance" class="main-section">
+            <header>Inheritance</header>
+            <p>Inheritance is a key feature of OOP, where new classes can inherit properties and methods from existing classes.</p>
+            <p>This allows for code reuse and the creation of a hierarchy of classes.</p>
+            <code>
+                // Inheritance using extends
+                class Animal {
+                  constructor(name) {
+                    this.name = name;
+                  }
+                  speak() {
+                    console.log(`${this.name} makes a noise.`);
+                  }
+                }
+
+                class Dog extends Animal {
+                  speak() {
+                    console.log(`${this.name} barks.`);
+                  }
+                }
+            </code>
+            <ul>
+                <li>Prototype-based Inheritance</li>
+                <li>Class Inheritance</li>
+                <li>Super Keyword</li>
+            </ul>
+        </section>
+
+        <section id="Polymorphism" class="main-section">
+            <header>Polymorphism</header>
+            <p>Polymorphism allows methods to do different things based on the object it is acting upon.</p>
+            <p>This is typically implemented by method overriding in the derived class.</p>
+            <code>
+                // Polymorphism
+                class Shape {
+                  draw() {
+                    console.log('Drawing a shape');
+                  }
+                }
+
+                class Circle extends Shape {
+                  draw() {
+                    console.log('Drawing a circle');
+                  }
+                }
+
+                const shapes = [new Shape(), new Circle()];
+                shapes.forEach(shape => shape.draw());
+            </code>
+            <ul>
+                <li>Method Overriding</li>
+                <li>Dynamic Method Dispatch</li>
+                <li>Interface Implementation</li>
+            </ul>
+        </section>
+
+        <section id="Encapsulation" class="main-section">
+            <header>Encapsulation</header>
+            <p>Encapsulation allows you to hide the internal state of objects and require all interaction to be performed through an object's methods.</p>
+            <p>This protects the integrity of the data and prevents unauthorized access or modification.</p>
+            <code>
+                // Encapsulation with private fields
+                class Person {
+                  #age;
+
+                  constructor(name, age) {
+                    this.name = name;
+                    this.#age = age;
+                  }
+
+                  getAge() {
+                    return this.#age;
+                  }
+                }
+
+                const john = new Person('John', 30);
+                console.log(john.getAge()); // 30
+            </code>
+            <ul>
+                <li>Private Fields</li>
+                <li>Getters and Setters</li>
+                <li>Data Hiding</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
